@@ -1,25 +1,34 @@
 {
-  "hosting": {
-    "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ]
-  },
-  "storage": {
-    "rules": "storage.rules"
-  },
-  "emulators": {
     "hosting": {
-      "port": 5000
+        "public": "public",
+        "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
     },
     "storage": {
-      "port": 9199
+        "rules": "storage.rules"
     },
-    "ui": {
-      "enabled": true
-    },
-    "singleProjectMode": true
-  }
+    "emulators": {
+        "functions": {
+            "port": 5001
+        },
+        "auth": {
+            "port": "9099"
+        },
+
+        "firestore": {
+            "port": 8080
+        },
+
+        "storage": {
+            "port": 9199
+        },
+
+        "pubsub": {
+            "host": "localhost",
+            "port": 8085
+        },
+        "ui": {
+            "enabled": true
+        },
+        "singleProjectMode": true
+    }
 }
